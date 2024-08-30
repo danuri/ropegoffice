@@ -1,0 +1,54 @@
+<?php
+
+use CodeIgniter\Router\RouteCollection;
+
+/**
+ * @var RouteCollection $routes
+ */
+ $routes->get('auth', 'Auth::index');
+ $routes->get('auth/login', 'Auth::login');
+ $routes->get('auth/logout', 'Auth::logout');
+ $routes->get('auth/callback', 'Auth::callback');
+
+ $routes->get('/', 'Home::index');
+ $routes->get('home', 'Home::index');
+ $routes->get('dashboard', 'Dashboard::index',["filter" => "auth"]);
+
+ $routes->group("ajax", ["filter" => "auth"], function ($routes) {
+     $routes->get('searchpegawai/(:num)', 'Ajax::getPegawai/$1');
+ });
+
+ $routes->group("surat", ["filter" => "auth"], function ($routes) {
+     $routes->get('surat_masuk', 'Surat\SuratMasuk::index');
+     $routes->get('surat_masuk/getdata', 'Surat\SuratMasuk::getData');
+     $routes->post('surat_masuk/save', 'Surat\SuratMasuk::save');
+     $routes->get('agenda_keluar', 'Surat\AgendaKeluar::index');
+     $routes->get('agenda_keluar/getdata', 'Surat\AgendaKeluar::getData');
+     $routes->post('agenda_keluar/add', 'Surat\AgendaKeluar::add');
+ });
+
+ $routes->group("aset", ["filter" => "auth"], function ($routes) {
+   $routes->group("dashboard", function ($routes) {
+       $routes->get('/', 'Aset\Dashboard::index');
+       $routes->get('pegawai', 'Aset\Dashboard::pegawai');
+       $routes->get('kinerja', 'Aset\Dashboard::kinerja');
+       $routes->get('map', 'Aset\Dashboard::map');
+   });
+
+   $routes->group("aset", function ($routes) {
+       $routes->get('/', 'Aset\Aset::index');
+       $routes->get('getaset', 'Aset\Aset::getAset');
+       $routes->post('save', 'Aset\Aset::asetSave');
+       $routes->get('kategori', 'Aset\Aset::kategori');
+       $routes->get('getkategori', 'Aset\Aset::getKategori');
+       $routes->post('kategori/save', 'Aset\Aset::kategoriSave');
+       $routes->get('kategori/edit', 'Aset\Aset::kategoriEdit');
+       $routes->get('kategori/delete/(:num)', 'Aset\Aset::kategoriDelete/$1');
+   });
+
+   $routes->group("distribusi", function ($routes) {
+       $routes->get('/', 'Aset\Distribusi::index');
+       $routes->get('getaset', 'Aset\Distribusi::getDistribusi');
+       $routes->post('save', 'Aset\Distribusi::save');
+   });
+ });
