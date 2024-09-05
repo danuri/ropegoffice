@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Simaset | Kementerian Agama RI</title>
+    <title>eOffice | Kementerian Agama RI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Sistem Manajemen Aset Biro Kepegawaian Kementerian Agama RI" name="description" />
     <meta content="Danunih" name="author" />
@@ -206,7 +206,7 @@
                         </li>
                         <li class="menu-title"><span data-key="t-menu">Aset</span></li>
                       <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= site_url('informasi')?>">
+                        <a class="nav-link menu-link" href="<?= site_url('dashboard')?>">
                           <i class="ri-dashboard-2-line"></i> <span data-key="t-apps">Dashboard</span>
                         </a>
                       </li>
@@ -221,7 +221,7 @@
                                     <a href="<?= site_url('aset/kategori')?>" class="nav-link" data-key="t-horizontal">Kategori</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= site_url('aset')?>" class="nav-link" data-key="t-horizontal">Aset</a>
+                                    <a href="<?= site_url('aset/data')?>" class="nav-link" data-key="t-horizontal">Aset</a>
                                 </li>
                             </ul>
                         </div>

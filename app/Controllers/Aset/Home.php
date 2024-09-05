@@ -9,7 +9,7 @@ use \Hermawan\DataTables\DataTable;
 use App\Models\KategoriModel;
 use App\Models\AsetModel;
 
-class Aset extends BaseController
+class Home extends BaseController
 {
     public function index()
     {

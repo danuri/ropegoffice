@@ -31,13 +31,14 @@ use CodeIgniter\Router\RouteCollection;
 
    $routes->get('/', 'Aset\Dashboard::index');
    $routes->get('dashboard', 'Aset\Dashboard::index');
-   $routes->get('getaset', 'Aset\Aset::getAset');
-   $routes->post('save', 'Aset\Aset::asetSave');
-   $routes->get('kategori', 'Aset\Aset::kategori');
-   $routes->get('getkategori', 'Aset\Aset::getKategori');
-   $routes->post('kategori/save', 'Aset\Aset::kategoriSave');
-   $routes->get('kategori/edit', 'Aset\Aset::kategoriEdit');
-   $routes->get('kategori/delete/(:num)', 'Aset\Aset::kategoriDelete/$1');
+   $routes->get('data', 'Aset\Home::getAset');
+   $routes->get('getaset', 'Aset\Home::getAset');
+   $routes->post('save', 'Aset\Home::asetSave');
+   $routes->get('kategori', 'Aset\Home::kategori');
+   $routes->get('getkategori', 'Aset\Home::getKategori');
+   $routes->post('kategori/save', 'Aset\Home::kategoriSave');
+   $routes->get('kategori/edit', 'Aset\Home::kategoriEdit');
+   $routes->get('kategori/delete/(:num)', 'Aset\Home::kategoriDelete/$1');
 
    $routes->group("distribusi", function ($routes) {
        $routes->get('/', 'Aset\Distribusi::index');
