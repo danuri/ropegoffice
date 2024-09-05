@@ -227,7 +227,7 @@
                         </div>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link menu-link" href="<?= site_url('distribusi')?>">
+                          <a class="nav-link menu-link" href="<?= site_url('aset/distribusi')?>">
                             <i class="ri-account-circle-fill"></i> <span data-key="t-apps">Distribusi Aset</span>
                           </a>
                         </li>
