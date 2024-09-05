@@ -109,7 +109,7 @@
     var table = new DataTable('#disttable',{
         processing: true,
         serverSide: true,
-        ajax: '<?= site_url('distribusi/getaset')?>',
+        ajax: '<?= site_url('aset/distribusi/getaset')?>',
         columns: [
             {data: 'nip'},
             {data: 'id_aset'},

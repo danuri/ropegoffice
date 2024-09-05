@@ -14,7 +14,7 @@ class Distribusi extends BaseController
     {
       $asetm = new AsetModel();
       $data['assets'] = $asetm->findAll();
-      return view('distribusi/index', $data);
+      return view('aset/distribusi/index', $data);
     }
 
     public function getDistribusi()
