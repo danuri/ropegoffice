@@ -28,6 +28,16 @@ use CodeIgniter\Router\RouteCollection;
  });
 
  $routes->group("aset", ["filter" => "auth"], function ($routes) {
+   
+   $routes->get('/', 'Aset\Aset::index');
+   $routes->get('getaset', 'Aset\Aset::getAset');
+   $routes->post('save', 'Aset\Aset::asetSave');
+   $routes->get('kategori', 'Aset\Aset::kategori');
+   $routes->get('getkategori', 'Aset\Aset::getKategori');
+   $routes->post('kategori/save', 'Aset\Aset::kategoriSave');
+   $routes->get('kategori/edit', 'Aset\Aset::kategoriEdit');
+   $routes->get('kategori/delete/(:num)', 'Aset\Aset::kategoriDelete/$1');
+
    $routes->group("dashboard", function ($routes) {
        $routes->get('/', 'Aset\Dashboard::index');
        $routes->get('pegawai', 'Aset\Dashboard::pegawai');
@@ -35,16 +45,6 @@ use CodeIgniter\Router\RouteCollection;
        $routes->get('map', 'Aset\Dashboard::map');
    });
 
-   $routes->group("aset", function ($routes) {
-       $routes->get('/', 'Aset\Aset::index');
-       $routes->get('getaset', 'Aset\Aset::getAset');
-       $routes->post('save', 'Aset\Aset::asetSave');
-       $routes->get('kategori', 'Aset\Aset::kategori');
-       $routes->get('getkategori', 'Aset\Aset::getKategori');
-       $routes->post('kategori/save', 'Aset\Aset::kategoriSave');
-       $routes->get('kategori/edit', 'Aset\Aset::kategoriEdit');
-       $routes->get('kategori/delete/(:num)', 'Aset\Aset::kategoriDelete/$1');
-   });
 
    $routes->group("distribusi", function ($routes) {
        $routes->get('/', 'Aset\Distribusi::index');
