@@ -28,8 +28,9 @@ use CodeIgniter\Router\RouteCollection;
  });
 
  $routes->group("aset", ["filter" => "auth"], function ($routes) {
-   
-   $routes->get('/', 'Aset\Aset::index');
+
+   $routes->get('/', 'Aset\Dashboard::index');
+   $routes->get('dashboard', 'Aset\Dashboard::index');
    $routes->get('getaset', 'Aset\Aset::getAset');
    $routes->post('save', 'Aset\Aset::asetSave');
    $routes->get('kategori', 'Aset\Aset::kategori');
@@ -37,14 +38,6 @@ use CodeIgniter\Router\RouteCollection;
    $routes->post('kategori/save', 'Aset\Aset::kategoriSave');
    $routes->get('kategori/edit', 'Aset\Aset::kategoriEdit');
    $routes->get('kategori/delete/(:num)', 'Aset\Aset::kategoriDelete/$1');
-
-   $routes->group("dashboard", function ($routes) {
-       $routes->get('/', 'Aset\Dashboard::index');
-       $routes->get('pegawai', 'Aset\Dashboard::pegawai');
-       $routes->get('kinerja', 'Aset\Dashboard::kinerja');
-       $routes->get('map', 'Aset\Dashboard::map');
-   });
-
 
    $routes->group("distribusi", function ($routes) {
        $routes->get('/', 'Aset\Distribusi::index');
