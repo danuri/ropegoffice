@@ -31,7 +31,7 @@ use CodeIgniter\Router\RouteCollection;
 
    $routes->get('/', 'Aset\Dashboard::index');
    $routes->get('dashboard', 'Aset\Dashboard::index');
-   $routes->get('data', 'Aset\Home::getAset');
+   $routes->get('data', 'Aset\Home::index');
    $routes->get('getaset', 'Aset\Home::getAset');
    $routes->post('save', 'Aset\Home::asetSave');
    $routes->get('kategori', 'Aset\Home::kategori');
