@@ -30,8 +30,8 @@ class SuratMasuk extends BaseController
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                         <li><a class="dropdown-item" href="javascript:;" onClick="detail(\''.$row->id.'\')">View</a></li>
                         <li><a class="dropdown-item" href="javascript:;" onClick="detail(\''.$row->id.'\')">History</a></li>
-                        <li><a class="dropdown-item" href="javascript:;" onClick="detail(\''.$row->id.'\')">Cetak</a></li>
-                        <li><a class="dropdown-item" href="javascript:;" onClick="detail(\''.$row->id.'\')">Delete</a></li>
+                        <li><a class="dropdown-item" href="javascript:;" onClick="window.open(\''.site_url('surat/surat_masuk/cetak/'.$row->id).'\')">Cetak</a></li>
+                        <li><a class="dropdown-item" href="'.site_url('surat/surat_masuk/delete/'.$row->id).'" onClick="return confirm(\'Surat akan dihapus?\')">Delete</a></li>
                     </ul>
                 </div>';
       })
@@ -60,7 +60,7 @@ class SuratMasuk extends BaseController
 
       $insert = $model->insert($param);
 
-      return redirect()->back()->with('message', 'Kategori telah ditambahkan');
+      return redirect()->back()->with('message', 'Surat telah ditambahkan');
     }
 
     public function detail($id)
@@ -169,9 +169,18 @@ class SuratMasuk extends BaseController
       <?php
     }
 
+    public function cetak($id)
+    {
+      $model = new SuratmasukModel;
+      $data['surat'] = $model->find($id);
+      return view('surat/cetak',$data);
+    }
+
     public function delete($id)
     {
       $model = new SuratmasukModel;
       $delete = $model->delete($id);
+
+      return redirect()->back()->with('message', 'Data telah dihapus');
     }
 }

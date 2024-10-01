@@ -22,6 +22,8 @@ use CodeIgniter\Router\RouteCollection;
      $routes->get('surat_masuk', 'Surat\SuratMasuk::index');
      $routes->get('surat_masuk/getdata', 'Surat\SuratMasuk::getData');
      $routes->get('surat_masuk/detail/(:num)', 'Surat\SuratMasuk::detail/$1');
+     $routes->get('surat_masuk/cetak/(:num)', 'Surat\SuratMasuk::cetak/$1');
+     $routes->get('surat_masuk/delete/(:num)', 'Surat\SuratMasuk::delete/$1');
      $routes->post('surat_masuk/save', 'Surat\SuratMasuk::save');
      $routes->get('agenda_keluar', 'Surat\AgendaKeluar::index');
      $routes->get('agenda_keluar/getdata', 'Surat\AgendaKeluar::getData');
