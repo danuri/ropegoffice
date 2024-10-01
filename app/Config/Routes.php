@@ -21,6 +21,7 @@ use CodeIgniter\Router\RouteCollection;
  $routes->group("surat", ["filter" => "auth"], function ($routes) {
      $routes->get('surat_masuk', 'Surat\SuratMasuk::index');
      $routes->get('surat_masuk/getdata', 'Surat\SuratMasuk::getData');
+     $routes->get('surat_masuk/detail/(:num)', 'Surat\SuratMasuk::detail/$1');
      $routes->post('surat_masuk/save', 'Surat\SuratMasuk::save');
      $routes->get('agenda_keluar', 'Surat\AgendaKeluar::index');
      $routes->get('agenda_keluar/getdata', 'Surat\AgendaKeluar::getData');

@@ -21,11 +21,11 @@
       <div class="col-12 align-self-center">
         <div class="card">
           <div class="card-body">
-            <table class="table table-bordered table-striped" id="asettable">
+            <table class="table" id="asettable">
               <thead>
                 <tr>
                   <th>Agenda</th>
-                  <th>Tanggal</th>
+                  <th>Tanggal Surat</th>
                   <th>Nama</th>
                   <th>Perihal</th>
                   <th>Asal Surat</th>
@@ -158,6 +158,24 @@
           </div>
       </div>
   </div>
+
+  <div id="detailModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="myModalLabel">Detail Surat Masuk</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+              </div>
+              <div class="modal-body" id="detailsurat">
+                Loading
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+              </div>
+
+          </div>
+      </div>
+  </div>
   <?= $this->endSection() ?>
 
   <?= $this->section('script') ?>
@@ -210,5 +228,10 @@
     });
 
   });
+
+  function detail(id) {
+    $('#detailsurat').load('<?= site_url('surat/surat_masuk/detail')?>/'+id);
+    $('#detailModal').modal('show');
+  }
   </script>
   <?= $this->endSection() ?>

@@ -98,10 +98,10 @@
 
                     <a href="<?= site_url() ?>" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="<?= base_url()?>assets/hrms-logo.png" alt="" height="22">
+                            <img src="<?= base_url()?>assets2/hrms-logo.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="<?= base_url()?>assets/hrms-logo-light.png" alt="" height="45">
+                            <img src="<?= base_url()?>assets2/hrms-logo-light.png" alt="" height="45">
                         </span>
                     </a>
                 </div>
@@ -171,10 +171,10 @@
                 <!-- Light Logo-->
                 <a href="<?= site_url() ?>" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="<?= base_url()?>assets/hrms-logo.png" alt="" height="22">
+                        <img src="<?= base_url()?>assets2/hrms-logo.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="<?= base_url()?>assets/hrms-logo-light.png" alt="" height="45">
+                        <img src="<?= base_url()?>assets2/hrms-logo-light.png" alt="" height="45">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">

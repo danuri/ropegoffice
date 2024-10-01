@@ -1,0 +1,5 @@
+.nav.nav-pills:not(.nav-align-right):not(.nav-align-left) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+}

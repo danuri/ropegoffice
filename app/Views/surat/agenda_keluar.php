@@ -75,7 +75,7 @@
   <?= $this->endSection() ?>
 
   <?= $this->section('script') ?>
-  <script src="<?= base_url()?>assets/js/jquery.form.js"></script>
+  <script src="<?= base_url()?>assets2/js/jquery.form.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       var table = new DataTable('#agenda',{
