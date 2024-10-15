@@ -6,8 +6,8 @@
 
     <style>
     body {
-      font-family: arial;
-      font-size: 20px;
+      font-family: 'American Typewriter', serif;
+      font-size: 18px;
       padding-left: 50px;
     }
     </style>
@@ -16,7 +16,7 @@
     <div style="padding-left:400px;margin-top:100px;margin-bottom:20px;">
       <?= $surat->srt_kode?>
     </div>
-    <table border="0">
+    <table border="0" width="50%">
       <tr>
         <td><?= $surat->srt_asal_nomor?></td>
       </tr>
@@ -38,10 +38,10 @@
     </div>
 
     <script type="text/javascript">
-    window.addEventListener("afterprint", function(event) {
-        window.close()
-    })
-    window.print()
+    // window.addEventListener("afterprint", function(event) {
+    //     window.close()
+    // })
+    // window.print()
     </script>
   </body>
 </html>
