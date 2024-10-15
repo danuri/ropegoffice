@@ -13,10 +13,10 @@
     </style>
   </head>
   <body>
-    <div style="padding-left:400px;margin-top:100px;margin-bottom:20px;">
+    <div style="padding-left:300px;margin-top:100px;margin-bottom:20px;">
       <?= $surat->srt_kode?>
     </div>
-    <table border="0" width="50%">
+    <table border="0" width="75%">
       <tr>
         <td><?= $surat->srt_asal_nomor?></td>
       </tr>
@@ -33,7 +33,7 @@
         <td><?= $surat->srt_asal_tanggal?></td>
       </tr>
     </table>
-    <div style="padding-left:300px;margin-top:50px;">
+    <div style="padding-left:250px;margin-top:50px;">
       <?= $surat->srt_arah?>
     </div>
 
