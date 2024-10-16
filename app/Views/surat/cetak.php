@@ -16,7 +16,7 @@
     <div style="padding-left:300px;margin-top:100px;margin-bottom:20px;">
       <?= $surat->srt_kode?>
     </div>
-    <table border="1" width="30%">
+    <table border="0" width="500px">
       <tr>
         <td height="20px"><?= $surat->srt_asal_nomor?></td>
       </tr>
