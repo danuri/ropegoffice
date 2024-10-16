@@ -171,12 +171,12 @@ margin-bottom: 2cm;
       <div class="header" style="height: 80px">
 
       </div>
-      <table class="table" width="530px" border="0">
+      <table class="table" width="500px" border="0">
         <tr>
           <td colspan="3" style="text-align:right;height:40px;"><?= $surat->srt_kode?></td>
         </tr>
         <tr>
-          <td width="150px" style="text-align:right;height:20px;"></td>
+          <td width="75px" style="text-align:right;height:20px;"></td>
           <td colspan="2"><?= $surat->srt_asal_nomor?></td>
         </tr>
         <tr>
