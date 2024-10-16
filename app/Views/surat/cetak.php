@@ -10,15 +10,6 @@
       font-size: 15px;
       padding-left: 50px;
     }
-
-    @media print {
-    body{
-        width: 21cm;
-        height: 29.7cm;
-        margin: 30mm 45mm 30mm 45mm;
-        /* change the margins as you want them to be. */
-       }
-    }
     </style>
   </head>
   <body>
