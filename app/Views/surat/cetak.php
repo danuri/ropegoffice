@@ -35,10 +35,10 @@
     </div>
 
     <script type="text/javascript">
-    // window.addEventListener("afterprint", function(event) {
-    //     window.close()
-    // })
-    // window.print()
+    window.addEventListener("afterprint", function(event) {
+        window.close()
+    })
+    window.print()
     </script>
   </body>
 </html>
