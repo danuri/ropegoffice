@@ -46,7 +46,7 @@
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="myModalLabel">Tambah Aset</h5>
+                  <h5 class="modal-title" id="myModalLabel">Distribusi Aset</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
               </div>
               <div class="modal-body">
@@ -90,6 +90,14 @@
                         </select>
                       </div>
                   </div>
+                  <div class="row mb-3">
+                      <div class="col-lg-3">
+                          <label for="tanggal" class="form-label">Tanggal Serah Terima</label>
+                      </div>
+                      <div class="col-lg-9">
+                        <input type="date" name="tanggal" class="form-control" value="">
+                      </div>
+                  </div>
               </form>
               </div>
               <div class="modal-footer">
@@ -122,7 +130,7 @@
 
     $('#simpan').on('click',function(event) {
       loaderin();
-      axios.post('<?= site_url('aset/save')?>', {
+      axios.post('<?= site_url('aset/distribusi/save')?>', {
         kode: $('#kode').val(),
         kategori: $('#kategori').val(),
         merek: $('#merek').val(),
