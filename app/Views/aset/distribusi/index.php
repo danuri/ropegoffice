@@ -143,7 +143,7 @@
         nama: $('#nama').val(),
         satker: $('#satker').val(),
         jabatan: $('#jabatan').val(),
-        id_aset: $('#id_aset').val()
+        id_aset: $('#id_aset').val(),
         tanggal_terima: $('#tanggal_terima').val()
       })
       .then(function (response) {
