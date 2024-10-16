@@ -24,7 +24,10 @@
         <td height="20px"><?= $surat->srt_asal?></td>
       </tr>
       <tr>
-        <td height="20px"><?= $surat->srt_asal_perihal?> - <?= $surat->srt_asal_nama?></td>
+        <td height="20px"><?= $surat->srt_asal_perihal?>/td>
+      </tr>
+      <tr>
+        <td height="20px"><?= $surat->srt_asal_nama?></td>
       </tr>
       <tr>
         <td height="20px"><?= $surat->srt_asal_tanggal?></td>
