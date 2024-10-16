@@ -31,7 +31,7 @@ class Distribusi extends BaseController
 
     public function save()
     {
-      $model = new AsetModel;
+      $model = new DistribusiModel;
 
       $param = [
         'nip' => $this->request->getVar('nip'),
