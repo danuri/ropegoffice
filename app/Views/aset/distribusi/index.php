@@ -72,6 +72,14 @@
                   </div>
                   <div class="row mb-3">
                       <div class="col-lg-3">
+                          <label for="tipe" class="form-label">Jabatan</label>
+                      </div>
+                      <div class="col-lg-9">
+                          <input type="text" class="form-control" name="jabatan" id="jabatan" readonly>
+                      </div>
+                  </div>
+                  <div class="row mb-3">
+                      <div class="col-lg-3">
                           <label for="tipe" class="form-label">Satuan Kerja</label>
                       </div>
                       <div class="col-lg-9">
@@ -95,7 +103,7 @@
                           <label for="tanggal" class="form-label">Tanggal Serah Terima</label>
                       </div>
                       <div class="col-lg-9">
-                        <input type="date" name="tanggal" class="form-control" value="">
+                        <input type="date" name="tanggal_terima" id="tanggal_terima" class="form-control" value="">
                       </div>
                   </div>
               </form>
@@ -131,11 +139,12 @@
     $('#simpan').on('click',function(event) {
       loaderin();
       axios.post('<?= site_url('aset/distribusi/save')?>', {
-        kode: $('#kode').val(),
-        kategori: $('#kategori').val(),
-        merek: $('#merek').val(),
-        tipe: $('#tipe').val(),
-        tanggal: $('#tanggal').val()
+        nip: $('#nip').val(),
+        nama: $('#nama').val(),
+        satker: $('#satker').val(),
+        jabatan: $('#jabatan').val(),
+        id_aset: $('#id_aset').val()
+        tanggal_terima: $('#tanggal_terima').val()
       })
       .then(function (response) {
         loaderout();
@@ -163,6 +172,7 @@
       console.log(response.data);
       $('#nama').val(response.data.data.NAMA_LENGKAP);
       $('#satker').val(response.data.data.KETERANGAN_SATUAN_KERJA);
+      $('#jabatan').val(response.data.data.TAMPIL_JABATAN);
     })
     .catch(function (error) {
       alert('Data tidak ditemukan');

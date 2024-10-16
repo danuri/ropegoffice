@@ -28,4 +28,24 @@ class Distribusi extends BaseController
       })
       ->toJson(true);
     }
+
+    public function save()
+    {
+      $model = new AsetModel;
+
+      $param = [
+        'nip' => $this->request->getVar('nip'),
+        'nama' => $this->request->getVar('nama'),
+        'jabatan' => $this->request->getVar('jabatan'),
+        'satuan_kerja' => $this->request->getVar('satuan_kerja'),
+        'id_aset' => $this->request->getVar('id_aset'),
+        'tanggal_terima' => $this->request->getVar('tanggal_terima'),
+        'status' => 1,
+        'created_by' => session('nip'),
+      ];
+
+      $insert = $model->insert($param);
+
+      return $this->response->setJSON(['status'=>'success','message'=>'Data berhasil ditambahkan']);
+    }
 }
