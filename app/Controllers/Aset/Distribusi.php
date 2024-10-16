@@ -37,7 +37,7 @@ class Distribusi extends BaseController
         'nip' => $this->request->getVar('nip'),
         'nama' => $this->request->getVar('nama'),
         'jabatan' => $this->request->getVar('jabatan'),
-        'satuan_kerja' => $this->request->getVar('satuan_kerja'),
+        'satuan_kerja' => $this->request->getVar('satker'),
         'id_aset' => $this->request->getVar('id_aset'),
         'tanggal_terima' => $this->request->getVar('tanggal_terima'),
         'status' => 1,

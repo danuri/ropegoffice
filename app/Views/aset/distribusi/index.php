@@ -129,8 +129,8 @@
         columns: [
             {data: 'nip'},
             {data: 'id_aset'},
-            {data: 'tanggal_terima'},
             {data: 'status'},
+            {data: 'tanggal_terima'},
             {data: 'tanggal_kembali'},
             {data: 'action'},
         ]
@@ -143,7 +143,7 @@
         nama: $('#nama').val(),
         satker: $('#satker').val(),
         jabatan: $('#jabatan').val(),
-        id_aset: $('#id_aset').val(),
+        id_aset: $('#aset').val(),
         tanggal_terima: $('#tanggal_terima').val()
       })
       .then(function (response) {
