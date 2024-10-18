@@ -132,9 +132,8 @@
                       </div>
                       <div class="col-lg-4">
                           <select class="form-select" name="srt_arah" id="srt_arah">
-                            <option value="Ka Tim I">Ka Tim I</option>
-                            <option value="Ka Tim II">Ka Tim II</option>
-                            <option value="Ka Tim III">Ka Tim III</option>
+                            <option value="Kabag I">Kabag I</option>
+                            <option value="Kabag II">Kabag II</option>
                             <option value="Kasubbag TU">Kasubbag TU</option>
                             <option value="Karopeg">Karopeg</option>
                           </select>
