@@ -233,14 +233,14 @@ function konsultasi_status($status)
   return $result;
 }
 
-function laporanstatus($status)
+function asettatus($status)
 {
   if($status == 0){
-    $result = '<span class="badge bg-warning">Dikirim</span>';
+    $result = '<span class="badge bg-warning">Diterima Pegawai</span>';
   }else if($status == 1){
-    $result = '<span class="badge bg-success">Diterima</span>';
+    $result = '<span class="badge bg-success">Diterima Pegawai</span>';
   }else if($status == 2){
-    $result = '<span class="badge bg-danger">Ditolak</span>';
+    $result = '<span class="badge bg-danger">Dikembalikan</span>';
   }else{
     $result = '';
   }

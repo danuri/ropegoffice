@@ -26,7 +26,6 @@
                 <tr>
                   <th>PEGAWAI</th>
                   <th>ASET</th>
-                  <th>STATUS</th>
                   <th>PENERIMAAN</th>
                   <th>PENGEMBALIAN</th>
                   <th>OPSI</th>
@@ -129,7 +128,6 @@
         columns: [
             {data: 'nip'},
             {data: 'id_aset'},
-            {data: 'status'},
             {data: 'tanggal_terima'},
             {data: 'tanggal_kembali'},
             {data: 'action'},
