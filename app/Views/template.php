@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-layout-style="default" data-layout-mode="light" data-layout-width="fluid" data-layout-position="fixed">
+<html lang="en" data-layout="horizontal" data-topbar="dark" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-layout-style="default" data-layout-mode="light" data-layout-width="fluid" data-layout-position="fixed">
 <head>
 
     <meta charset="utf-8" />
@@ -92,16 +92,16 @@
                             <img src="<?= base_url()?>assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="<?= base_url()?>assets/images/logo-hrms.png" alt="" height="45">
+                            <img src="<?= base_url()?>assets/images/sdmoffice.png" alt="" height="45">
                         </span>
                     </a>
 
                     <a href="<?= site_url() ?>" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="<?= base_url()?>assets2/hrms-logo.png" alt="" height="22">
+                            <img src="<?= base_url()?>assets/images/hrms-logo.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="<?= base_url()?>assets2/hrms-logo-light.png" alt="" height="45">
+                            <img src="<?= base_url()?>assets/images/sdmoffice.png" alt="" height="45">
                         </span>
                     </a>
                 </div>
