@@ -48,5 +48,7 @@ use CodeIgniter\Router\RouteCollection;
        $routes->get('/', 'Aset\Distribusi::index');
        $routes->get('getaset', 'Aset\Distribusi::getDistribusi');
        $routes->post('save', 'Aset\Distribusi::save');
+       $routes->post('uploadbaterima', 'Aset\Distribusi::uploadbaterima');
+       $routes->post('uploadbakembali', 'Aset\Distribusi::uploadbakembali');
    });
  });

@@ -179,5 +179,9 @@
       // always executed
     });
   }
+
+  function uploadBA(id) {
+    alert('adasd');
+  }
   </script>
   <?= $this->endSection() ?>
