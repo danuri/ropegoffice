@@ -92,7 +92,7 @@
                       <div class="col-lg-9">
                         <select class="form-select" name="aset" id="aset">
                           <?php foreach ($assets as $row) {
-                            echo '<option value="'.$row->id.'">'.$row->merek.' - '.$row->tipe.'</option>';
+                            echo '<option value="'.$row->id.'">'.$row->merek.' - '.$row->tipe.' - '.$row->kode_aset.'</option>';
                           } ?>
                         </select>
                       </div>
