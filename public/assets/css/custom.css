@@ -1,5 +1,32 @@
-.nav.nav-pills:not(.nav-align-right):not(.nav-align-left) {
-  overflow-x: auto;
-  overflow-y: hidden;
-  flex-wrap: nowrap;
+:root[data-topbar=dark] {
+  --vz-header-bg: #2f3a64;
+}
+
+:root, [data-bs-theme=light] {
+  --vz-warning: #daba60;
+}
+
+.menu-title {
+  color: var(--vz-header-bg);
+}
+
+.navbar-menu .navbar-nav .nav-link:hover {
+    color: #353a61;
+    font-weight: 400;
+}
+
+.navbar-menu .navbar-nav .nav-link[data-bs-toggle=collapse][aria-expanded=true] {
+  color: #353a61;
+  font-weight: 400;
+}
+
+.navbar-menu .navbar-nav .nav-link.active {
+  color: #353a61;
+  font-weight: 400;
+}
+
+.form-control:disabled {
+    background-color: #fbfbfb;
+    opacity: 1;
+    border: none;
 }

@@ -8,7 +8,7 @@
     <meta content="Sistem Manajemen Aset Biro Kepegawaian Kementerian Agama RI" name="description" />
     <meta content="Danunih" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url()?>assets/images/favicon.ico">
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
     <!--datatable responsive css-->
@@ -19,15 +19,15 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!-- Layout config Js -->
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/js/layout.js"></script>
+    <script src="<?= base_url()?>assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url()?>assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url()?>assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url()?>assets/css/custom.css" rel="stylesheet" type="text/css" />
     <style media="screen">
   	#loverlay{
   	position: fixed;
@@ -89,10 +89,10 @@
                 <div class="navbar-brand-box horizontal-logo">
                     <a href="<?= site_url() ?>" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/images/logo-sm.png" alt="" height="22">
+                            <img src="<?= base_url()?>assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/images/logo-hrms.png" alt="" height="45">
+                            <img src="<?= base_url()?>assets/images/logo-hrms.png" alt="" height="45">
                         </span>
                     </a>
 
@@ -135,7 +135,7 @@
                 <div class="dropdown ms-sm-3 header-item topbar-user">
                     <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="d-flex align-items-center">
-                            <img class="rounded-circle header-profile-user user-avatar" src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                            <img class="rounded-circle header-profile-user user-avatar" src="<?= base_url()?>assets/images/users/avatar-1.jpg" alt="Header Avatar">
                             <span class="text-start ms-xl-2">
                                 <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text"><?= session('nama')?></span>
                                 <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text"><?= session('jabatan')?></span>
@@ -162,10 +162,10 @@
                 <!-- Dark Logo-->
                 <a href="<?= site_url() ?>" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/images/logo-hrms.png" alt="" height="22">
+                        <img src="<?= base_url()?>assets/images/logo-hrms.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/images/logo-hrms.png" alt="" height="45">
+                        <img src="<?= base_url()?>assets/images/logo-hrms.png" alt="" height="45">
                     </span>
                 </a>
                 <!-- Light Logo-->
@@ -312,15 +312,15 @@
   </div>
 
     <!-- JAVASCRIPT -->
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/libs/node-waves/waves.min.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/libs/feather-icons/feather.min.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/js/plugins.js"></script>
+    <script src="<?= base_url()?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url()?>assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="<?= base_url()?>assets/libs/node-waves/waves.min.js"></script>
+    <script src="<?= base_url()?>assets/libs/feather-icons/feather.min.js"></script>
+    <script src="<?= base_url()?>assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="<?= base_url()?>assets/js/plugins.js"></script>
 
     <!-- App js -->
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/js/app.js"></script>
+    <script src="<?= base_url()?>assets/js/app.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
