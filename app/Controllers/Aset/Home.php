@@ -36,6 +36,16 @@ class Home extends BaseController
       })
       ->add('action', function($row){
         return '<button type="button" class="btn btn-primary btn-sm" onclick="alert(\'edit customer: '.$row->id.'\')">Edit</button>';
+        return '<div class="dropdown">
+                    <a href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ri-settings-2-line"></i>
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                        <li><a class="dropdown-item" href="javascript:;" onClick="#">View</a></li>
+                        <li><a class="dropdown-item" href="'.site_url('aset/delete/'.$row->id).'" onClick="return confirm(\'Aset akan dihapus?\')">Hapus</a></li>
+                    </ul>
+                </div>';
       })
       ->toJson(true);
     }
@@ -79,6 +89,15 @@ class Home extends BaseController
       $insert = $model->insert($param);
 
       return $this->response->setJSON(['status'=>'success','message'=>'Data berhasil ditambahkan']);
+    }
+
+    public function delete($id)
+    {
+      $model = new AsetModel;
+
+      $insert = $model->delete($id);
+
+      return redirect()->back()->with('message', 'Aset telah dihapus');
     }
 
     public function kategori()

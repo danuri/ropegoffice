@@ -37,6 +37,7 @@ use CodeIgniter\Router\RouteCollection;
    $routes->get('data', 'Aset\Home::index');
    $routes->get('getaset', 'Aset\Home::getAset');
    $routes->post('save', 'Aset\Home::asetSave');
+   $routes->get('delete/(:num)', 'Aset\Home::delete/$1');
    $routes->get('kategori', 'Aset\Home::kategori');
    $routes->get('getkategori', 'Aset\Home::getKategori');
    $routes->post('kategori/save', 'Aset\Home::kategoriSave');
