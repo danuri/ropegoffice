@@ -35,7 +35,6 @@ class Home extends BaseController
         return 'Tersedia';
       })
       ->add('action', function($row){
-        return '<button type="button" class="btn btn-primary btn-sm" onclick="alert(\'edit customer: '.$row->id.'\')">Edit</button>';
         return '<div class="dropdown">
                     <a href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="ri-settings-2-line"></i>
