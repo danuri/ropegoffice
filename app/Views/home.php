@@ -4,23 +4,23 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>eOffice | Biro Kepegawaian</title>
+    <title>eOffice | Biro Sumber Daya Manusia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
+    <meta content="eOffice Biro SDM Kementerian Agama" name="description" />
+    <meta content="Danunih" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url()?>assets/images/favicon.ico">
 
     <!-- Layout config Js -->
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/js/layout.js"></script>
+    <script src="<?= base_url()?>assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url()?>assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url()?>assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url()?>assets/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -81,15 +81,15 @@
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/libs/node-waves/waves.min.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/libs/feather-icons/feather.min.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/js/plugins.js"></script>
+    <script src="<?= base_url()?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url()?>assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="<?= base_url()?>assets/libs/node-waves/waves.min.js"></script>
+    <script src="<?= base_url()?>assets/libs/feather-icons/feather.min.js"></script>
+    <script src="<?= base_url()?>assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="<?= base_url()?>assets/js/plugins.js"></script>
 
     <!-- password-addon init -->
-    <script src="https://d2mj1s7x3czrue.cloudfront.net/hrms/assets/js/pages/password-addon.init.js"></script>
+    <script src="<?= base_url()?>assets/js/pages/password-addon.init.js"></script>
 
     <script type="text/javascript">
     function alert($text) {
