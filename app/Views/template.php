@@ -204,12 +204,18 @@
                             <i class="ri-mail-send-line"></i> <span data-key="t-apps">Agenda Keluar</span>
                           </a>
                         </li>
-                        <li class="menu-title"><span data-key="t-menu">Aset</span></li>
-                      <li class="nav-item">
-                        <a class="nav-link menu-link" href="<?= site_url('dashboard')?>">
-                          <i class="ri-dashboard-2-line"></i> <span data-key="t-apps">Dashboard</span>
-                        </a>
-                      </li>
+
+                        <?php if(session('role') == 3){ ?>
+
+                          <li class="nav-item">
+                            <a class="nav-link menu-link" href="<?= site_url('surat/surat_masuk')?>">
+                              <i class="ri-mail-download-line"></i> <span data-key="t-apps">Surat Masuk</span>
+                            </a>
+                          </li>
+
+                        <?php } ?>
+
+                        <?php if(session('role') == 2){ ?>
 
                         <li class="nav-item">
                         <a class="nav-link menu-link collapsed" href="#pegawai" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="pegawai">
@@ -223,14 +229,14 @@
                                 <li class="nav-item">
                                     <a href="<?= site_url('aset/data')?>" class="nav-link" data-key="t-horizontal">Aset</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="<?= site_url('aset/distribusi')?>" class="nav-link" data-key="t-horizontal">Distribusi Aset</a>
+                                </li>
                             </ul>
                         </div>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link menu-link" href="<?= site_url('aset/distribusi')?>">
-                            <i class="ri-account-circle-fill"></i> <span data-key="t-apps">Distribusi Aset</span>
-                          </a>
-                        </li>
+
+                        <?php } ?>
 
                     </ul>
                 </div>
