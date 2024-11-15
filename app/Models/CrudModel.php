@@ -60,9 +60,11 @@ class CrudModel extends Model
     return $query;
   }
 
-  public function getActivities($id)
+  public function asetAvailable()
   {
-    $query = $this->db->query("exec sp_get_aktifitas @usul='".$id."'")->getResult();
+    $query = $this->db->query("SELECT a.*
+                        FROM aset a LEFT JOIN aset_pengguna ap ON a.id = ap.id_aset
+                        WHERE ap.id_aset IS NULL")->getResult();
     return $query;
   }
 

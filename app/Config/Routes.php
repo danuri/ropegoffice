@@ -47,6 +47,7 @@ use CodeIgniter\Router\RouteCollection;
    $routes->group("distribusi", function ($routes) {
        $routes->get('/', 'Aset\Distribusi::index');
        $routes->get('getaset', 'Aset\Distribusi::getDistribusi');
+       $routes->get('delete/(:num)', 'Aset\Distribusi::delete/$1');
        $routes->post('save', 'Aset\Distribusi::save');
        $routes->post('uploadbaterima', 'Aset\Distribusi::uploadbaterima');
        $routes->post('uploadbakembali', 'Aset\Distribusi::uploadbakembali');

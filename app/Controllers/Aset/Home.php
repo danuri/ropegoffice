@@ -22,7 +22,9 @@ class Home extends BaseController
     public function getAset()
     {
       $kategori = new AsetModel();
-      $kategori->select('id, kode_aset, kategori_id, merek, tipe, tanggal, foto, created_by');
+      $kategori->select('aset.id, kode_aset, kategori_id, merek, tipe, tanggal, foto, aset.created_by')
+                ->join('aset_pengguna', 'aset_pengguna.id_aset = aset.id', 'LEFT')
+                ->where(['tanggal_kembali'=>NULL]);
 
       return DataTable::of($kategori)
       ->add('imgfoto', function($row){
@@ -31,8 +33,12 @@ class Home extends BaseController
       ->add('nama', function($row){
         return $row->merek.' / '.$row->tipe;
       })
-      ->add('status', function($row){
-        return 'Tersedia';
+      ->edit('status', function($row, $meta){
+        if($row->status == 1){
+          return 'Tidak Tersedia';
+        }else{
+          return 'Tersedia';
+        }
       })
       ->add('action', function($row){
         return '<div class="dropdown">

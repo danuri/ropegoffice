@@ -7,13 +7,14 @@ use CodeIgniter\HTTP\ResponseInterface;
 use \Hermawan\DataTables\DataTable;
 use App\Models\DistribusiModel;
 use App\Models\AsetModel;
+use App\Models\CrudModel;
 
 class Distribusi extends BaseController
 {
     public function index()
     {
-      $asetm = new AsetModel();
-      $data['assets'] = $asetm->findAll();
+      $asetm = new CrudModel();
+      $data['assets'] = $asetm->asetAvailable();
       return view('aset/distribusi/index', $data);
     }
 
@@ -50,7 +51,7 @@ class Distribusi extends BaseController
         return $row->merek .' - '.$row->tipe;
       })
       ->add('action', function($row){
-        return '<button type="button" class="btn btn-primary btn-sm" onclick="alert(\'edit customer: '.$row->id.'\')">Edit</button>';
+        return '<a href="'.site_url('distribusi/delete/'.$row->id).'" class="btn btn-danger btn-sm" onclick="alert(\'Data akan dihapus?\')">Hapus</a>';
       })
       ->toJson(true);
     }
@@ -144,5 +145,11 @@ class Distribusi extends BaseController
       $insert = $model->update($id,$param);
 
       return redirect()->back()->with('message', 'BA telah diunggah');
+    }
+
+    function delete($id) {
+      $model = new DistribusiModel;
+      $model->delete($id);
+      return redirect()->back()->with('message', 'Data telah dihapus');
     }
 }
