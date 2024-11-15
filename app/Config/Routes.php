@@ -51,5 +51,7 @@ use CodeIgniter\Router\RouteCollection;
        $routes->post('save', 'Aset\Distribusi::save');
        $routes->post('uploadbaterima', 'Aset\Distribusi::uploadbaterima');
        $routes->post('uploadbakembali', 'Aset\Distribusi::uploadbakembali');
+       $routes->get('draftbaterima/(:num)', 'Aset\Distribusi::draftBaTerima/$1');
+       $routes->get('draftbakembali/(:num)', 'Aset\Distribusi::draftBaKembali/$1');
    });
  });

@@ -22,7 +22,7 @@ class Home extends BaseController
     public function getAset()
     {
       $kategori = new AsetModel();
-      $kategori->select('aset.id, kode_aset, kategori_id, merek, tipe, tanggal, foto, aset.created_by')
+      $kategori->select('aset.id, kode_aset, kategori_id, merek, tipe, tanggal, foto, status, aset.created_by, aset_pengguna.nip')
                 ->join('aset_pengguna', 'aset_pengguna.id_aset = aset.id', 'LEFT')
                 ->where(['tanggal_kembali'=>NULL]);
 
@@ -34,7 +34,7 @@ class Home extends BaseController
         return $row->merek.' / '.$row->tipe;
       })
       ->edit('status', function($row, $meta){
-        if($row->status == 1){
+        if($row->nip){
           return 'Tidak Tersedia';
         }else{
           return 'Tersedia';
@@ -48,6 +48,7 @@ class Home extends BaseController
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                         <li><a class="dropdown-item" href="javascript:;" onClick="#">View</a></li>
+                        <li><a class="dropdown-item" href="javascript:;" onClick="#">History</a></li>
                         <li><a class="dropdown-item" href="'.site_url('aset/delete/'.$row->id).'" onClick="return confirm(\'Aset akan dihapus?\')">Hapus</a></li>
                     </ul>
                 </div>';

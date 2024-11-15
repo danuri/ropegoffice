@@ -24,7 +24,8 @@
             <table class="table table-bordered table-striped" id="disttable">
               <thead>
                 <tr>
-                  <th>PEGAWAI</th>
+                  <th>NIP</th>
+                  <th>NAMA</th>
                   <th>ASET</th>
                   <th>PENERIMAAN</th>
                   <th>PENGEMBALIAN</th>
@@ -127,6 +128,7 @@
         ajax: '<?= site_url('aset/distribusi/getaset')?>',
         columns: [
             {data: 'nip'},
+            {data: 'nama'},
             {data: 'id_aset'},
             {data: 'tanggal_terima'},
             {data: 'tanggal_kembali'},

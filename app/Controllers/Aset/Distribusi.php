@@ -25,14 +25,14 @@ class Distribusi extends BaseController
                 ->join('aset', 'aset.id = id_aset');
 
       return DataTable::of($kategori)
-      ->edit('nip', function($row, $meta){
-        return '<strong>' . $row->nama .'</strong><br>'.$row->nip;
-      })
+      // ->edit('nip', function($row, $meta){
+      //   return '<strong>' . $row->nama .'</strong><br>'.$row->nip;
+      // })
       ->edit('tanggal_terima', function($row, $meta){
         if($row->status == 1){
           return $row->tanggal_terima.'<br><a href="'.base_url('uploads/baterima/'.$row->lampiran_terima).'" target="_blank">Lihat BA</a>';
         }else{
-          return $row->tanggal_terima.'<br><a href="">Download Draft BA</a> | <a href="javascript:;" onClick="$(\'#file'.$row->id.'\').click()">Upload BA</a>
+          return $row->tanggal_terima.'<br><a href="'.base_url('aset/distribusi/draftbaterima/'.$row->id).'">Download Draft BA</a> | <a href="javascript:;" onClick="$(\'#file'.$row->id.'\').click()">Upload BA</a>
           <form method="POST" action="'. site_url('aset/distribusi/uploadbaterima').'" style="display: none;" id="form'.$row->id.'" enctype="multipart/form-data">
             <input type="hidden" name="id" value="'.$row->id.'">
             <input type="file" name="dokumen" id="file'.$row->id.'" onchange="$(\'#form'.$row->id.'\').submit()">
@@ -151,5 +151,63 @@ class Distribusi extends BaseController
       $model = new DistribusiModel;
       $model->delete($id);
       return redirect()->back()->with('message', 'Data telah dihapus');
+    }
+
+    public function draftBaTerima($id)
+    {
+      $model = new DistribusiModel();
+      $dist = $model->select('aset_pengguna.id, aset_pengguna.nip, aset_pengguna.nama,aset_pengguna.jabatan,aset_pengguna.satuan_kerja, aset_pengguna.id_aset, aset_pengguna.status, aset_pengguna.lampiran_terima, aset_pengguna.lampiran_kembali, aset_pengguna.tanggal_terima, aset_pengguna.tanggal_kembali, aset.merek, aset.tipe, aset.kode_aset')
+                ->join('aset', 'aset.id = id_aset')
+                ->where('aset_pengguna.id', $id)->first();
+
+      $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor('template/penyerahan.docx');
+
+      $predefinedMultilevel = array('listType' => \PhpOffice\PhpWord\Style\ListItem::TYPE_BULLET_EMPTY);
+
+      $templateProcessor->setValue('nama', $dist->nama);
+      $templateProcessor->setValue('nip', $dist->nip);
+      $templateProcessor->setValue('jabatan', $dist->jabatan);
+      $templateProcessor->setValue('satker', $dist->satuan_kerja);
+      $templateProcessor->setValue('hari', hari($dist->tanggal_terima));
+      $templateProcessor->setValue('tanggal', date('d',strtotime($dist->tanggal_terima)));
+      $templateProcessor->setValue('bulan', date('m',strtotime($dist->tanggal_terima)));
+      $templateProcessor->setValue('tahun', date('Y',strtotime($dist->tanggal_terima)));
+      $templateProcessor->setValue('merk', $dist->merek);
+      $templateProcessor->setValue('tipe', $dist->tipe);
+      $templateProcessor->setValue('sn', $dist->kode_aset);
+
+      $filename = 'draft_ba_terima_'.$dist->nama.'.docx';
+      $templateProcessor->saveAs('draft/'.$filename);
+
+      return $this->response->download('draft/'.$filename,null);
+    }
+
+    public function draftBaKembali($id)
+    {
+      $model = new DistribusiModel();
+      $dist = $model->select('aset_pengguna.id, aset_pengguna.nip, aset_pengguna.nama,aset_pengguna.jabatan,aset_pengguna.satuan_kerja, aset_pengguna.id_aset, aset_pengguna.status, aset_pengguna.lampiran_terima, aset_pengguna.lampiran_kembali, aset_pengguna.tanggal_terima, aset_pengguna.tanggal_kembali, aset.merek, aset.tipe, aset.kode_aset')
+                ->join('aset', 'aset.id = id_aset')
+                ->where('aset_pengguna.id', $id)->first();
+
+      $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor('template/pengembalian.docx');
+
+      $predefinedMultilevel = array('listType' => \PhpOffice\PhpWord\Style\ListItem::TYPE_BULLET_EMPTY);
+
+      $templateProcessor->setValue('nama', $dist->nama);
+      $templateProcessor->setValue('nip', $dist->nip);
+      $templateProcessor->setValue('jabatan', $dist->jabatan);
+      $templateProcessor->setValue('satker', $dist->satuan_kerja);
+      $templateProcessor->setValue('hari', hari($dist->tanggal_kembali));
+      $templateProcessor->setValue('tanggal', date('d',strtotime($dist->tanggal_kembali)));
+      $templateProcessor->setValue('bulan', date('m',strtotime($dist->tanggal_kembali)));
+      $templateProcessor->setValue('tahun', date('Y',strtotime($dist->tanggal_kembali)));
+      $templateProcessor->setValue('merk', $dist->merek);
+      $templateProcessor->setValue('tipe', $dist->tipe);
+      $templateProcessor->setValue('sn', $dist->kode_aset);
+
+      $filename = 'draft_ba_kembali_'.$dist->nama.'.docx';
+      $templateProcessor->saveAs('draft/'.$filename);
+
+      return $this->response->download('draft/'.$filename,null);
     }
 }
