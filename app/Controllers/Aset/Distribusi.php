@@ -44,7 +44,7 @@ class Distribusi extends BaseController
         if($row->tanggal_kembali){
           return $row->tanggal_kembali.'<br><a href="'.base_url('uploads/baterima/'.$row->lampiran_kembali).'" target="_blank">Lihat BA</a>';
         }else{
-          return $row->tanggal_kembali.'<br><a href="">Download Draft BA</a> | <a href="javascript:;" onClick="uploadKembali('.$row->id.')">Upload BA</a>';
+          return $row->tanggal_kembali.'<br><a href="'.base_url('aset/distribusi/draftbakembali/'.$row->id).'">Download Draft BA</a> | <a href="javascript:;" onClick="uploadKembali('.$row->id.')">Upload BA</a>';
         }
       })
       ->edit('id_aset', function($row, $meta){
