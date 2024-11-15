@@ -66,7 +66,7 @@
                           <label for="merek" class="form-label">Nama</label>
                       </div>
                       <div class="col-lg-9">
-                          <input type="text" class="form-control" name="nama" id="nama" readonly>
+                          <input type="text" class="form-control" name="nama" id="nama">
                       </div>
                   </div>
                   <div class="row mb-3">
@@ -74,7 +74,7 @@
                           <label for="tipe" class="form-label">Jabatan</label>
                       </div>
                       <div class="col-lg-9">
-                          <input type="text" class="form-control" name="jabatan" id="jabatan" readonly>
+                          <input type="text" class="form-control" name="jabatan" id="jabatan">
                       </div>
                   </div>
                   <div class="row mb-3">
@@ -82,7 +82,7 @@
                           <label for="tipe" class="form-label">Satuan Kerja</label>
                       </div>
                       <div class="col-lg-9">
-                          <input type="text" class="form-control" name="satker" id="satker" readonly>
+                          <input type="text" class="form-control" name="satker" id="satker">
                       </div>
                   </div>
                   <div class="row mb-3">
