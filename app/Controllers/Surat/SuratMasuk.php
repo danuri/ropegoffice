@@ -18,7 +18,7 @@ class SuratMasuk extends BaseController
     {
       $surat = new SuratmasukModel();
       $surat->select('id,srt_kode_urut,srt_kode,srt_tanggal_terima,srt_asal_tanggal,srt_asal_nama,srt_asal_perihal,srt_asal,srt_status,srt_arah');
-      $surat->where('srt_tahun',date('Y'));
+    //   $surat->where('srt_tahun',date('Y'));
 
       return DataTable::of($surat)
       ->add('action', function($row){
@@ -34,6 +34,10 @@ class SuratMasuk extends BaseController
                         <li><a class="dropdown-item" href="'.site_url('surat/surat_masuk/delete/'.$row->id).'" onClick="return confirm(\'Surat akan dihapus?\')">Delete</a></li>
                     </ul>
                 </div>';
+      })->filter(function ($builder, $request) {
+
+        if ($request->tahun)
+            $builder->where('srt_tahun', $request->tahun);
       })
       ->toJson(true);
     }
