@@ -10,6 +10,9 @@
           <h4 class="mb-sm-0">Surat Masuk</h4>
 
           <div class="page-title-right">
+            <button type="button" class="btn btn-success btn-sm" onclick="exportData()">
+                Export
+            </button>
             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addModal">
                 Tambah Surat Masuk
             </button>
@@ -254,6 +257,11 @@
   function detail(id) {
     $('#detailsurat').load('<?= site_url('surat/surat_masuk/detail')?>/'+id);
     $('#detailModal').modal('show');
+  }
+
+  function exportData() {
+    var tahun = $('#tahun').val();
+    window.location.href = '<?= site_url('surat/surat_masuk/export')?>/'+tahun;
   }
   </script>
   <?= $this->endSection() ?>

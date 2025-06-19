@@ -4,6 +4,8 @@ namespace App\Controllers\Surat;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use \Hermawan\DataTables\DataTable;
 use App\Models\SuratmasukModel;
 
@@ -186,5 +188,65 @@ class SuratMasuk extends BaseController
       $delete = $model->delete($id);
 
       return redirect()->back()->with('message', 'Data telah dihapus');
+    }
+
+    public function export($tahun)
+    {
+      $kode = kodekepala(session('kelola'));
+
+      $model = new SuratmasukModel;
+      $surat = $model->where('srt_tahun', $tahun)->findAll();
+
+      $spreadsheet = new Spreadsheet();
+      $sheet = $spreadsheet->getActiveSheet();
+
+      $sheet->setCellValue('A1', 'id');
+      $sheet->setCellValue('B1', 'srt_arah');
+      $sheet->setCellValue('C1', 'srt_asal');
+      $sheet->setCellValue('D1', 'srt_asal_nama');
+      $sheet->setCellValue('E1', 'srt_asal_nomor');
+      $sheet->setCellValue('F1', 'srt_asal_perihal');
+      $sheet->setCellValue('G1', 'srt_asal_tanggal');
+      $sheet->setCellValue('H1', 'srt_kode');
+      $sheet->setCellValue('I1', 'srt_kode_urut');
+      $sheet->setCellValue('J1', 'srt_status');
+      $sheet->setCellValue('K1', 'srt_tanggal_terima');
+      $sheet->setCellValue('L1', 'srt_tahun');
+      $sheet->setCellValue('M1', 'srt_via');
+      $sheet->setCellValue('N1', 'srt_via_agenda');
+      $sheet->setCellValue('O1', 'srt_via_tanggal');
+      $sheet->setCellValue('P1', 'srt_sifat');
+      $sheet->setCellValue('Q1', 'created_by');
+      $sheet->setCellValue('R1', 'created_at');
+
+      $i = 2;
+      foreach ($surat as $row) {
+        $sheet->getCell('A'.$i)->setValueExplicit($row->id,\PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        $sheet->getCell('B'.$i)->setValueExplicit($row->srt_arah,\PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        $sheet->setCellValue('C'.$i, $row->srt_asal);
+        $sheet->setCellValue('D'.$i, $row->srt_asal_nama);
+        $sheet->setCellValue('E'.$i, $row->srt_asal_nomor);
+        $sheet->setCellValue('F'.$i, $row->srt_asal_perihal);
+        $sheet->setCellValue('G'.$i, $row->srt_asal_tanggal);
+        $sheet->setCellValue('H'.$i, $row->srt_kode);
+        $sheet->setCellValue('I'.$i, $row->srt_kode_urut);
+        $sheet->setCellValue('J'.$i, $row->srt_status);
+        $sheet->setCellValue('K'.$i, $row->srt_tanggal_terima);
+        $sheet->setCellValue('L'.$i, $row->srt_tahun);
+        $sheet->setCellValue('M'.$i, $row->srt_via);
+        $sheet->setCellValue('N'.$i, $row->srt_via_agenda);
+        $sheet->setCellValue('O'.$i, $row->srt_via_tanggal);
+        $sheet->setCellValue('P'.$i, $row->srt_sifat);
+        $sheet->setCellValue('Q'.$i, $row->created_by);
+        $sheet->setCellValue('R'.$i, $row->created_at);
+
+        $i++;
+      }
+      $sheet->setTitle('Surat Masuk '.$tahun);
+        
+      $writer = new Xlsx($spreadsheet);
+      header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      header('Content-Disposition: attachment; filename="SuratMasuk_'.$tahun.'.xlsx"');
+      $writer->save('php://output');
     }
 }
