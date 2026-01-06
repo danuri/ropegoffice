@@ -26,7 +26,8 @@
                 <div class="col-md-4">
                     <label for="tahun" class="form-label">Tahun</label>
                     <select id="tahun" class="form-select">
-                        <option value="2025" selected>2025</option>
+                        <option value="2026" >2026</option>
+                        <option value="2025" >2025</option>
                         <option value="2024">2024</option>
                     </select>
                 </div>
