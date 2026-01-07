@@ -166,7 +166,7 @@
   });
 
   function searchpegawai() {
-    axios.get('<?= site_url() ?>ajax/searchpegawai/'+$('#nip').val())
+    axios.get('<?= site_url() ?>/ajax/searchpegawai/'+$('#nip').val())
     .then(function (response) {
       // handle success
       console.log(response.data);
@@ -175,6 +175,7 @@
       $('#jabatan').val(response.data.data.TAMPIL_JABATAN);
     })
     .catch(function (error) {
+      log(error);
       alert('Data tidak ditemukan');
     })
     .finally(function () {
